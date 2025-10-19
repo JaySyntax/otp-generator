@@ -1,0 +1,40 @@
+{
+  "name": "otpx-test",
+  "version": "0.0.1",
+  "description": "A test SDK for generating OTPs",
+  "author": {
+    "name": "Jay",
+    "url": "https://github.com/JaySyntax"
+  },
+  "license": "MIT",
+  "keywords": [
+    "otp",
+    "generator"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm:build:watch\" \"tsx watch test-folder/script.ts\"",
+    "build": "tsup",
+    "build:watch": "tsup --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^24.8.1",
+    "concurrently": "^9.2.1",
+    "tsup": "^8.5.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.9.3"
+  }
+}
